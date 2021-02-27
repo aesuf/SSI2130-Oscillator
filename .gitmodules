@@ -1,0 +1,3 @@
+[submodule "midi2cv_"]
+	path = midi2cv_
+	url = https://github.com/elkayem/midi2cv.git
