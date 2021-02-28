@@ -5,7 +5,7 @@ This repository contains documentation for an Oscillator designed using the SSI2
 ## Design Team
 Ryan Laur, Daniel Louis, Sahil Patel, Dieter Steinhauser, Cale Woodward, et al.
 
-## Topics Explored:
+## Topics Explored
 * Decoupling Capacitors
 
 ## Parts
