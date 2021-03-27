@@ -1,0 +1,793 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="D">
+  <design>
+    <source>C:\Users\besta\OneDrive - University of Florida\Projects\ssi2130\kicad stuff\Diagram\SSI2130_eval_board.sch</source>
+    <date>2/12/2021 6:44:59 PM</date>
+    <tool>Eeschema (5.1.9)-1</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>SSI2130 Eval Board</title>
+        <company>AES - Hardware Design Team</company>
+        <rev/>
+        <date/>
+        <source>SSI2130_eval_board.sch</source>
+        <comment number="1" value="Designed by Ryan Laur"/>
+        <comment number="2" value="Using the Fatkeys Voltage Controlled Oscillator"/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="2" name="/References/Regulators/" tstamps="/60972BBE/">
+      <title_block>
+        <title/>
+        <company/>
+        <rev/>
+        <date/>
+        <source>schematic1.sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="U1">
+      <value>SSI2130</value>
+      <footprint>Synth_Components:PQN32_HandSoldering</footprint>
+      <datasheet>http://www.soundsemiconductor.com/downloads/ssi2130datasheet.pdf</datasheet>
+      <libsource lib="ssi2130" part="SSI2130" description="Fatkeys Voltage Controlled Oscillator"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>6026B3A4</tstamp>
+    </comp>
+    <comp ref="R9">
+      <value>4K</value>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60271D70</tstamp>
+    </comp>
+    <comp ref="C1">
+      <value>10u</value>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="CP" description="Polarized capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>602727F8</tstamp>
+    </comp>
+    <comp ref="R15">
+      <value>20K</value>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>6027D09A</tstamp>
+    </comp>
+    <comp ref="R18">
+      <value>10K</value>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>602A7378</tstamp>
+    </comp>
+    <comp ref="C3">
+      <value>0.1u</value>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>602B6E06</tstamp>
+    </comp>
+    <comp ref="R16">
+      <value>20K</value>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>6029B36F</tstamp>
+    </comp>
+    <comp ref="C4">
+      <value>10n</value>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60287C8B</tstamp>
+    </comp>
+    <comp ref="R17">
+      <value>270R</value>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>6028D9D3</tstamp>
+    </comp>
+    <comp ref="R20">
+      <value>47K</value>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>602D16D3</tstamp>
+    </comp>
+    <comp ref="RV3">
+      <value>5K</value>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R_POT_TRIM" description="Trim-potentiometer"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>602D3706</tstamp>
+    </comp>
+    <comp ref="C2">
+      <value>3.9n</value>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>602EC375</tstamp>
+    </comp>
+    <comp ref="R10">
+      <value>100K</value>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>602F68D1</tstamp>
+    </comp>
+    <comp ref="R11">
+      <value>100K</value>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>602FB040</tstamp>
+    </comp>
+    <comp ref="R12">
+      <value>100K</value>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>602FB23C</tstamp>
+    </comp>
+    <comp ref="R13">
+      <value>100K</value>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>602FB3FA</tstamp>
+    </comp>
+    <comp ref="R14">
+      <value>100K</value>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>602FB5AD</tstamp>
+    </comp>
+    <comp ref="R5">
+      <value>4K7</value>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>6030B0AD</tstamp>
+    </comp>
+    <comp ref="R6">
+      <value>4K7</value>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60310D73</tstamp>
+    </comp>
+    <comp ref="RV1">
+      <value>5K</value>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R_POT_TRIM" description="Trim-potentiometer"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>603248ED</tstamp>
+    </comp>
+    <comp ref="R1">
+      <value>270K</value>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>603583A0</tstamp>
+    </comp>
+    <comp ref="R21">
+      <value>500K</value>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>6038BF29</tstamp>
+    </comp>
+    <comp ref="R2">
+      <value>100K</value>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60415EAD</tstamp>
+    </comp>
+    <comp ref="R3">
+      <value>100K</value>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60416FC2</tstamp>
+    </comp>
+    <comp ref="R4">
+      <value>100K</value>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60417CC8</tstamp>
+    </comp>
+    <comp ref="RV2">
+      <value>5K</value>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R_POT_TRIM" description="Trim-potentiometer"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60433A05</tstamp>
+    </comp>
+    <comp ref="R8">
+      <value>10K</value>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>604390FE</tstamp>
+    </comp>
+    <comp ref="R7">
+      <value>100K</value>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60444F93</tstamp>
+    </comp>
+    <comp ref="C5">
+      <value>10n</value>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60460D08</tstamp>
+    </comp>
+    <comp ref="C6">
+      <value>10n</value>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>604E5EDE</tstamp>
+    </comp>
+    <comp ref="R19">
+      <value>10K</value>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>604EA944</tstamp>
+    </comp>
+    <comp ref="U2">
+      <value>LM4040LP-2.5</value>
+      <footprint>Package_TO_SOT_THT:TO-92_Inline</footprint>
+      <datasheet>http://www.ti.com/lit/ds/symlink/lm4040-n.pdf</datasheet>
+      <libsource lib="Reference_Voltage" part="LM4040LP-2.5" description="2.500V Precision Micropower Shunt Voltage Reference, TO-92"/>
+      <sheetpath names="/References/Regulators/" tstamps="/60972BBE/"/>
+      <tstamp>609B0914</tstamp>
+    </comp>
+    <comp ref="U3">
+      <value>LM4040LP-5</value>
+      <footprint>Package_TO_SOT_THT:TO-92_Inline</footprint>
+      <datasheet>http://www.ti.com/lit/ds/symlink/lm4040-n.pdf</datasheet>
+      <libsource lib="Reference_Voltage" part="LM4040LP-5" description="5.000V Precision Micropower Shunt Voltage Reference, TO-92"/>
+      <sheetpath names="/References/Regulators/" tstamps="/60972BBE/"/>
+      <tstamp>609B1205</tstamp>
+    </comp>
+    <comp ref="U4">
+      <value>LM4040LP-5</value>
+      <footprint>Package_TO_SOT_THT:TO-92_Inline</footprint>
+      <datasheet>http://www.ti.com/lit/ds/symlink/lm4040-n.pdf</datasheet>
+      <libsource lib="Reference_Voltage" part="LM4040LP-5" description="5.000V Precision Micropower Shunt Voltage Reference, TO-92"/>
+      <sheetpath names="/References/Regulators/" tstamps="/60972BBE/"/>
+      <tstamp>609B1747</tstamp>
+    </comp>
+    <comp ref="R22">
+      <value>1.8k</value>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/References/Regulators/" tstamps="/60972BBE/"/>
+      <tstamp>609B3734</tstamp>
+    </comp>
+    <comp ref="R23">
+      <value>4.7k</value>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/References/Regulators/" tstamps="/60972BBE/"/>
+      <tstamp>609B9E35</tstamp>
+    </comp>
+    <comp ref="R24">
+      <value>4.7k</value>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/References/Regulators/" tstamps="/60972BBE/"/>
+      <tstamp>609BAB97</tstamp>
+    </comp>
+    <comp ref="U5">
+      <value>LM7805_TO220</value>
+      <footprint>Package_TO_SOT_THT:TO-220-3_Vertical</footprint>
+      <datasheet>https://www.onsemi.cn/PowerSolutions/document/MC7800-D.PDF</datasheet>
+      <libsource lib="Regulator_Linear" part="LM7805_TO220" description="Positive 1A 35V Linear Regulator, Fixed Output 5V, TO-220"/>
+      <sheetpath names="/References/Regulators/" tstamps="/60972BBE/"/>
+      <tstamp>609C194B</tstamp>
+    </comp>
+    <comp ref="U6">
+      <value>LM7905_TO220</value>
+      <footprint>Package_TO_SOT_THT:TO-220-3_Vertical</footprint>
+      <datasheet>https://www.onsemi.com/pub/Collateral/MC7900-D.PDF</datasheet>
+      <libsource lib="Regulator_Linear" part="LM7905_TO220" description="Negative 1A 35V Linear Regulator, Fixed Output 5V, TO-220"/>
+      <sheetpath names="/References/Regulators/" tstamps="/60972BBE/"/>
+      <tstamp>609C2D79</tstamp>
+    </comp>
+    <comp ref="C7">
+      <value>0.22u</value>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/References/Regulators/" tstamps="/60972BBE/"/>
+      <tstamp>609C9F3C</tstamp>
+    </comp>
+    <comp ref="C8">
+      <value>0.1u</value>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/References/Regulators/" tstamps="/60972BBE/"/>
+      <tstamp>609CA53F</tstamp>
+    </comp>
+    <comp ref="C9">
+      <value>2.2u</value>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/References/Regulators/" tstamps="/60972BBE/"/>
+      <tstamp>609CA981</tstamp>
+    </comp>
+    <comp ref="C10">
+      <value>1u</value>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/References/Regulators/" tstamps="/60972BBE/"/>
+      <tstamp>609CAD41</tstamp>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="Device" part="C">
+      <description>Unpolarized capacitor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>C_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="CP">
+      <description>Polarized capacitor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>CP_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">CP</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="R">
+      <description>Resistor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>R_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="R_POT_TRIM">
+      <description>Trim-potentiometer</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Potentiometer*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">RV</field>
+        <field name="Value">R_POT_TRIM</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+        <pin num="3" name="3" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Reference_Voltage" part="LM4040LP-2.0">
+      <aliases>
+        <alias>LM4040LP-2.5</alias>
+        <alias>LM4040LP-3</alias>
+        <alias>LM4040LP-4.1</alias>
+        <alias>LM4040LP-5</alias>
+        <alias>LM4040LP-8.2</alias>
+        <alias>LM4040LP-10</alias>
+      </aliases>
+      <description>2.048V Precision Micropower Shunt Voltage Reference, TO-92</description>
+      <docs>http://www.ti.com/lit/ds/symlink/lm4040-n.pdf</docs>
+      <footprints>
+        <fp>TO?92*Inline*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">LM4040LP-2.0</field>
+        <field name="Footprint">Package_TO_SOT_THT:TO-92_Inline</field>
+      </fields>
+      <pins>
+        <pin num="2" name="K" type="passive"/>
+        <pin num="3" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Regulator_Linear" part="LM7805_TO220">
+      <aliases>
+        <alias>LM7806_TO220</alias>
+        <alias>LM7808_TO220</alias>
+        <alias>LM7809_TO220</alias>
+        <alias>LM7810_TO220</alias>
+        <alias>LM7812_TO220</alias>
+        <alias>LM7815_TO220</alias>
+        <alias>LM7818_TO220</alias>
+        <alias>LM7824_TO220</alias>
+        <alias>LM78M05_TO220</alias>
+        <alias>SPX2920U-3.3_TO220</alias>
+        <alias>SPX2920U-5.0_TO220</alias>
+        <alias>LF15_TO220</alias>
+        <alias>LF18_TO220</alias>
+        <alias>LF25_TO220</alias>
+        <alias>LF33_TO220</alias>
+        <alias>LF50_TO220</alias>
+        <alias>LF60_TO220</alias>
+        <alias>LF80_TO220</alias>
+        <alias>LF85_TO220</alias>
+        <alias>LF120_TO220</alias>
+        <alias>LF47_TO220</alias>
+        <alias>LF90_TO220</alias>
+        <alias>LM341T-05_TO220</alias>
+        <alias>LM341T-12_TO220</alias>
+        <alias>LM341T-15_TO220</alias>
+        <alias>LM2937xT</alias>
+        <alias>LM2931-3.3_TO220</alias>
+        <alias>LM2931-5.0_TO220</alias>
+      </aliases>
+      <description>Positive 1A 35V Linear Regulator, Fixed Output 5V, TO-220</description>
+      <docs>https://www.onsemi.cn/PowerSolutions/document/MC7800-D.PDF</docs>
+      <footprints>
+        <fp>TO?220*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">LM7805_TO220</field>
+        <field name="Footprint">Package_TO_SOT_THT:TO-220-3_Vertical</field>
+      </fields>
+      <pins>
+        <pin num="1" name="VI" type="power_in"/>
+        <pin num="2" name="GND" type="power_in"/>
+        <pin num="3" name="VO" type="power_out"/>
+      </pins>
+    </libpart>
+    <libpart lib="Regulator_Linear" part="LM7905_TO220">
+      <aliases>
+        <alias>LM79M05_TO220</alias>
+        <alias>LM79M12_TO220</alias>
+        <alias>LM79M15_TO220</alias>
+        <alias>LM7906_TO220</alias>
+        <alias>LM7908_TO220</alias>
+        <alias>LM7909_TO220</alias>
+        <alias>LM7910_TO220</alias>
+        <alias>LM7915_TO220</alias>
+        <alias>LM7912_TO220</alias>
+        <alias>LM7918_TO220</alias>
+        <alias>LM7924_TO220</alias>
+        <alias>MC79M05_TO220</alias>
+        <alias>MC79M08_TO220</alias>
+        <alias>MC79M12_TO220</alias>
+        <alias>MC79M15_TO220</alias>
+      </aliases>
+      <description>Negative 1A 35V Linear Regulator, Fixed Output 5V, TO-220</description>
+      <docs>https://www.onsemi.com/pub/Collateral/MC7900-D.PDF</docs>
+      <footprints>
+        <fp>TO?220*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">LM7905_TO220</field>
+        <field name="Footprint">Package_TO_SOT_THT:TO-220-3_Vertical</field>
+      </fields>
+      <pins>
+        <pin num="1" name="GND" type="power_in"/>
+        <pin num="2" name="VI" type="power_in"/>
+        <pin num="3" name="VO" type="power_out"/>
+      </pins>
+    </libpart>
+    <libpart lib="ssi2130" part="SSI2130">
+      <description>Fatkeys Voltage Controlled Oscillator</description>
+      <docs>http://www.soundsemiconductor.com/downloads/ssi2130datasheet.pdf</docs>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">SSI2130</field>
+        <field name="Footprint">Synth_Components:PQN32_HandSoldering</field>
+      </fields>
+      <pins>
+        <pin num="1" name="TRI_OUT" type="output"/>
+        <pin num="2" name="SIN+_IN" type="input"/>
+        <pin num="3" name="SIN-_IN" type="input"/>
+        <pin num="4" name="AUX_1_IN" type="input"/>
+        <pin num="5" name="AUX_2_IN" type="input"/>
+        <pin num="6" name="HF_TRACK" type="input"/>
+        <pin num="7" name="EXPO_FREQ" type="input"/>
+        <pin num="8" name="V-" type="power_in"/>
+        <pin num="9" name="TRI_MIX" type="input"/>
+        <pin num="10" name="SAW_MIX" type="input"/>
+        <pin num="11" name="PULSE_MIX" type="input"/>
+        <pin num="12" name="AUX_1_MIX" type="input"/>
+        <pin num="13" name="AUX_2_MIX" type="input"/>
+        <pin num="14" name="TCAP" type="output"/>
+        <pin num="15" name="DGND" type="power_in"/>
+        <pin num="16" name="AGND" type="power_in"/>
+        <pin num="17" name="HARD_SYNC" type="input"/>
+        <pin num="18" name="TIME_REV" type="input"/>
+        <pin num="19" name="SOFT_SYNC" type="input"/>
+        <pin num="20" name="HFT_BASE" type="input"/>
+        <pin num="21" name="LIN_FREQ" type="input"/>
+        <pin num="22" name="EXPO_SCALE" type="input"/>
+        <pin num="23" name="VREF" type="input"/>
+        <pin num="24" name="SINE_OUT" type="output"/>
+        <pin num="25" name="MIX_OUT" type="output"/>
+        <pin num="26" name="BW_COMP" type="input"/>
+        <pin num="27" name="V+" type="power_in"/>
+        <pin num="28" name="SQ_OUT" type="output"/>
+        <pin num="29" name="SAW_OUT" type="output"/>
+        <pin num="30" name="PULSE_OUT" type="output"/>
+        <pin num="31" name="PWM-_IN" type="input"/>
+        <pin num="32" name="PWM+_IN" type="input"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="Device">
+      <uri>C:\Program Files\KiCad\share\kicad\library/Device.lib</uri>
+    </library>
+    <library logical="Reference_Voltage">
+      <uri>C:\Program Files\KiCad\share\kicad\library/Reference_Voltage.lib</uri>
+    </library>
+    <library logical="Regulator_Linear">
+      <uri>C:\Program Files\KiCad\share\kicad\library/Regulator_Linear.lib</uri>
+    </library>
+    <library logical="ssi2130">
+      <uri>C:/Users/besta/Downloads/ssi2130_kicad(1)/ssi2130.lib</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="1V_OCT">
+      <node ref="R2" pin="2"/>
+    </net>
+    <net code="2" name="EXPO_MOD">
+      <node ref="R3" pin="2"/>
+    </net>
+    <net code="3" name="Net-(R8-Pad1)">
+      <node ref="R8" pin="1"/>
+      <node ref="RV2" pin="2"/>
+    </net>
+    <net code="4" name="Net-(R1-Pad1)">
+      <node ref="R7" pin="2"/>
+      <node ref="R8" pin="2"/>
+      <node ref="R1" pin="1"/>
+      <node ref="R4" pin="1"/>
+      <node ref="R3" pin="1"/>
+      <node ref="R2" pin="1"/>
+      <node ref="U1" pin="7"/>
+    </net>
+    <net code="5" name="REF_2V5">
+      <node ref="R7" pin="1"/>
+      <node ref="U2" pin="2"/>
+      <node ref="RV2" pin="3"/>
+      <node ref="R22" pin="2"/>
+    </net>
+    <net code="6" name="AUX2_IN">
+      <node ref="U1" pin="5"/>
+    </net>
+    <net code="7" name="GND">
+      <node ref="U4" pin="2"/>
+      <node ref="C2" pin="2"/>
+      <node ref="U3" pin="3"/>
+      <node ref="U2" pin="3"/>
+      <node ref="R19" pin="2"/>
+      <node ref="U1" pin="15"/>
+      <node ref="R16" pin="1"/>
+      <node ref="C3" pin="1"/>
+      <node ref="U1" pin="16"/>
+      <node ref="U1" pin="20"/>
+      <node ref="C4" pin="1"/>
+      <node ref="R18" pin="1"/>
+      <node ref="R5" pin="2"/>
+      <node ref="RV1" pin="3"/>
+      <node ref="R6" pin="2"/>
+      <node ref="RV2" pin="1"/>
+    </net>
+    <net code="8" name="Net-(RV1-Pad1)">
+      <node ref="U1" pin="6"/>
+      <node ref="RV1" pin="1"/>
+    </net>
+    <net code="9" name="AUX1_IN">
+      <node ref="U1" pin="4"/>
+    </net>
+    <net code="10" name="Net-(R6-Pad1)">
+      <node ref="R6" pin="1"/>
+      <node ref="U1" pin="3"/>
+    </net>
+    <net code="11" name="LIN_FREQ">
+      <node ref="U1" pin="21"/>
+      <node ref="R21" pin="2"/>
+    </net>
+    <net code="12" name="Net-(R1-Pad2)">
+      <node ref="RV1" pin="2"/>
+      <node ref="R1" pin="2"/>
+    </net>
+    <net code="13" name="SAW_OUT">
+      <node ref="U1" pin="29"/>
+    </net>
+    <net code="14" name="Net-(RV3-Pad1)">
+      <node ref="RV3" pin="1"/>
+      <node ref="U1" pin="22"/>
+    </net>
+    <net code="15" name="PULSE_OUT">
+      <node ref="U1" pin="30"/>
+    </net>
+    <net code="16" name="Net-(R20-Pad2)">
+      <node ref="R20" pin="2"/>
+      <node ref="RV3" pin="3"/>
+      <node ref="RV3" pin="2"/>
+    </net>
+    <net code="17" name="TUNE">
+      <node ref="R4" pin="2"/>
+    </net>
+    <net code="18" name="TIME_REV">
+      <node ref="U1" pin="18"/>
+    </net>
+    <net code="19" name="VREF_2V5">
+      <node ref="R20" pin="1"/>
+      <node ref="U1" pin="23"/>
+      <node ref="R21" pin="1"/>
+    </net>
+    <net code="20" name="SOFT_SYNC">
+      <node ref="C5" pin="1"/>
+    </net>
+    <net code="21" name="-5V">
+      <node ref="U1" pin="8"/>
+      <node ref="U6" pin="3"/>
+      <node ref="C10" pin="2"/>
+    </net>
+    <net code="22" name="Net-(C6-Pad2)">
+      <node ref="C6" pin="2"/>
+      <node ref="U1" pin="17"/>
+      <node ref="R19" pin="1"/>
+    </net>
+    <net code="23" name="HARD_SYNC">
+      <node ref="C6" pin="1"/>
+    </net>
+    <net code="24" name="Net-(C5-Pad2)">
+      <node ref="C5" pin="2"/>
+      <node ref="U1" pin="19"/>
+    </net>
+    <net code="25" name="Net-(R17-Pad2)">
+      <node ref="R17" pin="2"/>
+      <node ref="U1" pin="26"/>
+    </net>
+    <net code="26" name="CV_PWM">
+      <node ref="U1" pin="32"/>
+    </net>
+    <net code="27" name="Net-(C1-Pad2)">
+      <node ref="C1" pin="2"/>
+      <node ref="R9" pin="1"/>
+    </net>
+    <net code="28" name="+5V">
+      <node ref="U5" pin="3"/>
+      <node ref="C3" pin="2"/>
+      <node ref="R22" pin="1"/>
+      <node ref="R15" pin="1"/>
+      <node ref="U1" pin="27"/>
+      <node ref="C8" pin="1"/>
+    </net>
+    <net code="29" name="MIX_OUT">
+      <node ref="U1" pin="25"/>
+      <node ref="R18" pin="2"/>
+    </net>
+    <net code="30" name="Net-(R5-Pad1)">
+      <node ref="R5" pin="1"/>
+      <node ref="R9" pin="2"/>
+      <node ref="U1" pin="2"/>
+    </net>
+    <net code="31" name="Net-(C2-Pad1)">
+      <node ref="C2" pin="1"/>
+      <node ref="U1" pin="14"/>
+    </net>
+    <net code="32" name="Net-(R14-Pad1)">
+      <node ref="U1" pin="13"/>
+      <node ref="R14" pin="1"/>
+    </net>
+    <net code="33" name="TRI_OUT">
+      <node ref="U1" pin="31"/>
+      <node ref="C1" pin="1"/>
+      <node ref="U1" pin="1"/>
+    </net>
+    <net code="34" name="Net-(R12-Pad1)">
+      <node ref="R12" pin="1"/>
+      <node ref="U1" pin="11"/>
+    </net>
+    <net code="35" name="Net-(R11-Pad1)">
+      <node ref="R11" pin="1"/>
+      <node ref="U1" pin="10"/>
+    </net>
+    <net code="36" name="Net-(R10-Pad1)">
+      <node ref="U1" pin="9"/>
+      <node ref="R10" pin="1"/>
+    </net>
+    <net code="37" name="Net-(R13-Pad1)">
+      <node ref="R13" pin="1"/>
+      <node ref="U1" pin="12"/>
+    </net>
+    <net code="38" name="Net-(C4-Pad2)">
+      <node ref="R17" pin="1"/>
+      <node ref="C4" pin="2"/>
+    </net>
+    <net code="39" name="TRI_MIX_CV">
+      <node ref="R10" pin="2"/>
+    </net>
+    <net code="40" name="AUX2_MIX_CV">
+      <node ref="R14" pin="2"/>
+    </net>
+    <net code="41" name="AUX1_MIX_CV">
+      <node ref="R13" pin="2"/>
+    </net>
+    <net code="42" name="PULSE_MIX_CV">
+      <node ref="R12" pin="2"/>
+    </net>
+    <net code="43" name="SAW_MIX_CV">
+      <node ref="R11" pin="2"/>
+    </net>
+    <net code="44" name="SQR_OUT">
+      <node ref="R16" pin="2"/>
+      <node ref="U1" pin="28"/>
+      <node ref="R15" pin="2"/>
+    </net>
+    <net code="45" name="SINE_OUT">
+      <node ref="U1" pin="24"/>
+    </net>
+    <net code="46" name="+12V">
+      <node ref="R23" pin="1"/>
+      <node ref="C7" pin="1"/>
+      <node ref="R24" pin="2"/>
+      <node ref="U5" pin="1"/>
+    </net>
+    <net code="47" name="Net-(C7-Pad2)">
+      <node ref="C7" pin="2"/>
+      <node ref="C8" pin="2"/>
+      <node ref="U5" pin="2"/>
+    </net>
+    <net code="48" name="-12V">
+      <node ref="C9" pin="2"/>
+      <node ref="U6" pin="2"/>
+    </net>
+    <net code="49" name="Net-(C10-Pad1)">
+      <node ref="C9" pin="1"/>
+      <node ref="C10" pin="1"/>
+      <node ref="U6" pin="1"/>
+    </net>
+    <net code="50" name="REF_+5">
+      <node ref="R23" pin="2"/>
+      <node ref="U3" pin="2"/>
+    </net>
+    <net code="51" name="REF_-5">
+      <node ref="R24" pin="1"/>
+      <node ref="U4" pin="3"/>
+    </net>
+  </nets>
+</export>

@@ -14,9 +14,9 @@ Ryan Laur, Daniel Louis, Sahil Patel, Dieter Steinhauser, Cale Woodward, et al.
 * Arduino Nano
 * 6N138 Optocoupler
 * 2x MCP4822 12-bit DACs
-* LM324N Quad Op Amp (using alternate?)
-* Diode (1N4148?)
-* 220, 500, 3x1K, 7.7K (3K+4.7K), 10K Ohm resistors
+* LM324N Quad Op Amp
+* 1N4148 Diode 
+* 220, 500, 3x1K, ~7.7K (3k + 5k Trimmer), 10K Ohm resistors
 * 3x 0.1 uF ceramic capacitors
 * 5 pin MIDI jack
 * 7x 4mm banana plug jacks
