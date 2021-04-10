@@ -9,6 +9,12 @@ Ryan Laur, Daniel Louis, Sahil Patel, Dieter Steinhauser, Cale Woodward, et al.
 * Decoupling Capacitors
 
 ## Parts
+
+### Oscillator:
+
+* SSI2130
+
+
 ### MIDI-Converter:
 
 * Arduino Nano
@@ -22,7 +28,10 @@ Ryan Laur, Daniel Louis, Sahil Patel, Dieter Steinhauser, Cale Woodward, et al.
 * 7x 4mm banana plug jacks
 * 3-pin header and jumper
 
+### Sub-Oscillator:
 
-### Oscillator:
-
-* SSI2130
+* TL074 Quad Op Amp
+* 74LS74 Dual D-Type Flip-Flop
+* Resistors: 2x47k, 33k, 68k, 220k
+* 2N3904 
+* 2x 1N4148 Diode
