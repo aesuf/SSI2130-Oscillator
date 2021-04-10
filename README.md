@@ -31,7 +31,7 @@ Ryan Laur, Daniel Louis, Sahil Patel, Dieter Steinhauser, Cale Woodward, et al.
 ### Sub-Oscillator:
 
 * TL074 Quad Op Amp
-* 74LS74 Dual D-Type Flip-Flop
+* CD4013BE Dual D-Type Flip-Flop
 * Resistors: 2x47k, 33k, 68k, 220k
 * 2N3904 
 * 2x 1N4148 Diode
