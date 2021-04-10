@@ -1,0 +1,421 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Text GLabel 2950 2900 0    50   Input ~ 0
+SQR_OUT
+Wire Wire Line
+	4100 3000 4100 3350
+Wire Wire Line
+	4100 3350 3400 3350
+Wire Wire Line
+	3400 3350 3400 3100
+Wire Wire Line
+	3400 3100 3500 3100
+Wire Wire Line
+	2950 2900 3500 2900
+$Comp
+L 74xx:74LS74 IC1
+U 1 1 6073013B
+P 6750 2650
+F 0 "IC1" H 6900 2400 50  0000 C CNN
+F 1 "TL074" H 6500 2400 50  0000 C CNN
+F 2 "" H 6750 2650 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/tl071.pdf" H 6750 2650 50  0001 C CNN
+	1    6750 2650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Transistor_BJT:2N3904 TR1
+U 1 1 60732A51
+P 5400 3000
+F 0 "TR1" H 5590 3046 50  0000 L CNN
+F 1 "2N3904" H 5590 2955 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 5600 2925 50  0001 L CIN
+F 3 "https://www.onsemi.com/pub/Collateral/2N3903-D.PDF" H 5400 3000 50  0001 L CNN
+	1    5400 3000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_US R1
+U 1 1 60734A55
+P 4450 3000
+F 0 "R1" V 4245 3000 50  0000 C CNN
+F 1 "220K" V 4336 3000 50  0000 C CNN
+F 2 "" V 4490 2990 50  0001 C CNN
+F 3 "~" H 4450 3000 50  0001 C CNN
+	1    4450 3000
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_US R2
+U 1 1 6073674C
+P 4850 3300
+F 0 "R2" H 4918 3346 50  0000 L CNN
+F 1 "33K" H 4918 3255 50  0000 L CNN
+F 2 "" V 4890 3290 50  0001 C CNN
+F 3 "~" H 4850 3300 50  0001 C CNN
+	1    4850 3300
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 60738F61
+P 4850 3550
+F 0 "#PWR?" H 4850 3300 50  0001 C CNN
+F 1 "GND" H 4855 3377 50  0000 C CNN
+F 2 "" H 4850 3550 50  0001 C CNN
+F 3 "" H 4850 3550 50  0001 C CNN
+	1    4850 3550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 607397FB
+P 5500 3550
+F 0 "#PWR?" H 5500 3300 50  0001 C CNN
+F 1 "GND" H 5505 3377 50  0000 C CNN
+F 2 "" H 5500 3550 50  0001 C CNN
+F 3 "" H 5500 3550 50  0001 C CNN
+	1    5500 3550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4100 3000 4300 3000
+Wire Wire Line
+	4600 3000 4850 3000
+Wire Wire Line
+	4850 3000 4850 3150
+Connection ~ 4850 3000
+Wire Wire Line
+	4850 3000 5200 3000
+Wire Wire Line
+	4850 3450 4850 3550
+Wire Wire Line
+	5500 3550 5500 3200
+Wire Wire Line
+	5500 1950 5500 2200
+Text GLabel 5500 1950 1    50   Input ~ 0
+VREF_VDD
+Wire Wire Line
+	5500 2500 5500 2650
+$Comp
+L Device:R_US R3
+U 1 1 6074503D
+P 5500 2350
+F 0 "R3" H 5568 2396 50  0000 L CNN
+F 1 "68K" H 5568 2305 50  0000 L CNN
+F 2 "" V 5540 2340 50  0001 C CNN
+F 3 "~" H 5500 2350 50  0001 C CNN
+	1    5500 2350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6450 2650 5500 2650
+Connection ~ 5500 2650
+Wire Wire Line
+	5500 2650 5500 2800
+Wire Wire Line
+	6450 2550 6300 2550
+Wire Wire Line
+	6300 2550 6300 3100
+Wire Wire Line
+	6300 3100 7150 3100
+Wire Wire Line
+	7150 3100 7150 2750
+Wire Wire Line
+	7150 2750 7050 2750
+$Comp
+L power:GND #PWR?
+U 1 1 6074A9EB
+P 6550 2200
+F 0 "#PWR?" H 6550 1950 50  0001 C CNN
+F 1 "GND" H 6555 2027 50  0000 C CNN
+F 2 "" H 6550 2200 50  0001 C CNN
+F 3 "" H 6550 2200 50  0001 C CNN
+	1    6550 2200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 6074DE8C
+P 6750 3200
+F 0 "#PWR?" H 6750 2950 50  0001 C CNN
+F 1 "GND" H 6755 3027 50  0000 C CNN
+F 2 "" H 6750 3200 50  0001 C CNN
+F 3 "" H 6750 3200 50  0001 C CNN
+	1    6750 3200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6550 2200 6750 2200
+Wire Wire Line
+	6750 2200 6750 2350
+Wire Wire Line
+	7050 2550 7350 2550
+Wire Wire Line
+	7350 2550 7350 3600
+$Comp
+L power:GND #PWR?
+U 1 1 60750E2B
+P 6550 3750
+F 0 "#PWR?" H 6550 3500 50  0001 C CNN
+F 1 "GND" H 6555 3577 50  0000 C CNN
+F 2 "" H 6550 3750 50  0001 C CNN
+F 3 "" H 6550 3750 50  0001 C CNN
+	1    6550 3750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6450 4100 6300 4100
+Wire Wire Line
+	6300 4100 6300 4650
+Wire Wire Line
+	6300 4650 7200 4650
+Wire Wire Line
+	7200 4650 7200 4300
+Wire Wire Line
+	7200 4300 7050 4300
+Wire Wire Line
+	6100 3600 6100 4200
+Wire Wire Line
+	6100 4200 6450 4200
+Wire Wire Line
+	6100 3600 7350 3600
+Wire Wire Line
+	6750 2950 6750 3200
+$Comp
+L power:GND #PWR?
+U 1 1 607542B2
+P 6750 4750
+F 0 "#PWR?" H 6750 4500 50  0001 C CNN
+F 1 "GND" H 6755 4577 50  0000 C CNN
+F 2 "" H 6750 4750 50  0001 C CNN
+F 3 "" H 6750 4750 50  0001 C CNN
+	1    6750 4750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6750 4500 6750 4750
+$Comp
+L Device:R_US R4
+U 1 1 60754DDE
+P 7650 2550
+F 0 "R4" V 7445 2550 50  0000 C CNN
+F 1 "47K" V 7536 2550 50  0000 C CNN
+F 2 "" V 7690 2540 50  0001 C CNN
+F 3 "~" H 7650 2550 50  0001 C CNN
+	1    7650 2550
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_US R5
+U 1 1 60755F90
+P 7650 4100
+F 0 "R5" V 7445 4100 50  0000 C CNN
+F 1 "47K" V 7536 4100 50  0000 C CNN
+F 2 "" V 7690 4090 50  0001 C CNN
+F 3 "~" H 7650 4100 50  0001 C CNN
+	1    7650 4100
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	7050 4100 7500 4100
+Wire Wire Line
+	7350 2550 7500 2550
+Connection ~ 7350 2550
+Wire Wire Line
+	6550 3750 6750 3750
+Wire Wire Line
+	6750 3750 6750 3900
+$Comp
+L 74xx:74LS74 IC1
+U 2 1 60759027
+P 6750 4200
+F 0 "IC1" H 6950 3950 50  0000 C CNN
+F 1 "TL074" H 6500 3950 50  0000 C CNN
+F 2 "" H 6750 4200 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/tl071.pdf" H 6750 4200 50  0001 C CNN
+	2    6750 4200
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74xx:74LS74 IC1
+U 3 1 6075AE36
+P 3300 4750
+F 0 "IC1" H 3530 4796 50  0000 L CNN
+F 1 "TL074" H 3530 4705 50  0000 L CNN
+F 2 "" H 3300 4750 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/tl071.pdf" H 3300 4750 50  0001 C CNN
+	3    3300 4750
+	1    0    0    -1  
+$EndComp
+Text GLabel 3300 4150 1    50   Input ~ 0
+VREF_VDD
+$Comp
+L power:GND #PWR?
+U 1 1 6075DBA6
+P 3300 5350
+F 0 "#PWR?" H 3300 5100 50  0001 C CNN
+F 1 "GND" H 3305 5177 50  0000 C CNN
+F 2 "" H 3300 5350 50  0001 C CNN
+F 3 "" H 3300 5350 50  0001 C CNN
+	1    3300 5350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3300 4150 3300 4350
+Wire Wire Line
+	3300 5150 3300 5350
+Text GLabel 9200 2650 2    50   Input ~ 0
+D1_OCT_SQR_OUT
+Text GLabel 9200 4200 2    50   Input ~ 0
+D2_OCT_SQR_OUT
+Wire Wire Line
+	7800 4100 8000 4100
+Wire Wire Line
+	7800 2550 8000 2550
+$Comp
+L Device:D D2
+U 1 1 60760C50
+P 8000 3600
+F 0 "D2" V 7954 3680 50  0000 L CNN
+F 1 "D" V 8045 3680 50  0000 L CNN
+F 2 "" H 8000 3600 50  0001 C CNN
+F 3 "~" H 8000 3600 50  0001 C CNN
+	1    8000 3600
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:D D1
+U 1 1 60761B92
+P 8000 3000
+F 0 "D1" V 8046 2920 50  0000 R CNN
+F 1 "D" V 7955 2920 50  0000 R CNN
+F 2 "" H 8000 3000 50  0001 C CNN
+F 3 "~" H 8000 3000 50  0001 C CNN
+	1    8000 3000
+	0    -1   -1   0   
+$EndComp
+Text GLabel 9200 3400 2    50   Input ~ 0
+D2_OCT_PULSE_OUT
+Wire Wire Line
+	8000 2850 8000 2550
+Wire Wire Line
+	8000 3750 8000 4100
+Wire Wire Line
+	8000 3150 8000 3300
+$Comp
+L Amplifier_Operational:TL074 IC2
+U 2 1 6076929F
+P 8700 2650
+F 0 "IC2" H 8700 3017 50  0000 C CNN
+F 1 "TL074" H 8700 2926 50  0000 C CNN
+F 2 "" H 8650 2750 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/tl071.pdf" H 8750 2850 50  0001 C CNN
+	2    8700 2650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Amplifier_Operational:TL074 IC2
+U 3 1 6076CA82
+P 8750 3400
+F 0 "IC2" H 8750 3767 50  0000 C CNN
+F 1 "TL074" H 8750 3676 50  0000 C CNN
+F 2 "" H 8700 3500 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/tl071.pdf" H 8800 3600 50  0001 C CNN
+	3    8750 3400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Amplifier_Operational:TL074 IC2
+U 4 1 60770769
+P 8750 4200
+F 0 "IC2" H 8750 4567 50  0000 C CNN
+F 1 "TL074" H 8750 4476 50  0000 C CNN
+F 2 "" H 8700 4300 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/tl071.pdf" H 8800 4400 50  0001 C CNN
+	4    8750 4200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Amplifier_Operational:TL074 IC2
+U 1 1 6077586A
+P 3800 3000
+F 0 "IC2" H 3550 3300 50  0000 C CNN
+F 1 "TL074" H 3550 2750 50  0000 C CNN
+F 2 "" H 3750 3100 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/tl071.pdf" H 3850 3200 50  0001 C CNN
+	1    3800 3000
+	1    0    0    -1  
+$EndComp
+Connection ~ 4100 3000
+Wire Wire Line
+	8000 2550 8400 2550
+Connection ~ 8000 2550
+Wire Wire Line
+	8400 2750 8400 2950
+Wire Wire Line
+	8400 2950 9000 2950
+Wire Wire Line
+	9000 2950 9000 2650
+Wire Wire Line
+	9000 2650 9200 2650
+Connection ~ 9000 2650
+Wire Wire Line
+	8450 3300 8000 3300
+Connection ~ 8000 3300
+Wire Wire Line
+	8000 3300 8000 3450
+Wire Wire Line
+	8450 3500 8450 3700
+Wire Wire Line
+	8450 3700 9050 3700
+Wire Wire Line
+	9050 3700 9050 3400
+Wire Wire Line
+	9200 3400 9050 3400
+Connection ~ 9050 3400
+Wire Wire Line
+	8450 4100 8000 4100
+Connection ~ 8000 4100
+Wire Wire Line
+	8450 4300 8450 4500
+Wire Wire Line
+	8450 4500 9050 4500
+Wire Wire Line
+	9050 4500 9050 4200
+Wire Wire Line
+	9200 4200 9050 4200
+Connection ~ 9050 4200
+$Comp
+L Amplifier_Operational:TL074 IC2
+U 5 1 60780EC7
+P 4200 4800
+F 0 "IC2" H 4200 5150 50  0000 L CNN
+F 1 "TL074" H 4250 4350 50  0000 L CNN
+F 2 "" H 4150 4900 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/tl071.pdf" H 4250 5000 50  0001 C CNN
+	5    4200 4800
+	1    0    0    -1  
+$EndComp
+Text GLabel 4100 4150 1    50   Input ~ 0
+VREF_VDD
+Wire Wire Line
+	4100 4500 4100 4150
+Text GLabel 4100 5550 3    50   Input ~ 0
+VREF_VCC_NEG
+Wire Wire Line
+	4100 5100 4100 5550
+$EndSCHEMATC
