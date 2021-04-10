@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name SSI2130_eval_board-rescue)(type Legacy)(uri ${KIPRJMOD}/SSI2130_eval_board-rescue.lib)(options "")(descr ""))
+)
