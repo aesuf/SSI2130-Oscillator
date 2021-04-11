@@ -15,9 +15,10 @@ Ryan Laur, Daniel Louis, Sahil Patel, Dieter Steinhauser, Cale Woodward, et al.
 * SSI2130
 
 ### DC Converter
+* RS6-0512D regulated converter
 * Capacitors: 47pF, 100pF, 2x10µF, 22µF
-* 1 µH common mode choke
-* 200 µH differential mode choke 
+* Chokes: 1 µH CMC, 200 µH DMC
+* 5V USB power converter and cable
 
 ### MIDI-Converter:
 
