@@ -14,6 +14,10 @@ Ryan Laur, Daniel Louis, Sahil Patel, Dieter Steinhauser, Cale Woodward, et al.
 
 * SSI2130
 
+### DC Converter
+* Capacitors: 47pF, 100pF, 2x10µF, 22µF
+* 1 µH common mode choke
+* 200 µH differential mode choke 
 
 ### MIDI-Converter:
 
@@ -22,7 +26,8 @@ Ryan Laur, Daniel Louis, Sahil Patel, Dieter Steinhauser, Cale Woodward, et al.
 * 2x MCP4822 12-bit DACs
 * LM324N Quad Op Amp
 * 1N4148 Diode 
-* 220, 500, 3x1K, ~7.7K (3k + 5k Trimmer), 10K Ohm resistors
+* Resistors: 220, 500, 3x1k, 3k, 10k
+* 5k Trimmer
 * 3x 0.1 uF ceramic capacitors
 * 5 pin MIDI jack
 * 7x 4mm banana plug jacks
