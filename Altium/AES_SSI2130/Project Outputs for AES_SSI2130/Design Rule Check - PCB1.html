@@ -1,0 +1,555 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 8em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD20\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">2/26/2022</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">1:59:00 PM</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:02</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc" class="file"><acronym title="C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc">C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">61</td></tr>
+</table>
+</td>
+</table><a name="ID4QO2BJDAVMBODPSTNIKFDDLHQKLRXIWWXRISZDIV2V1O2JZDP1K"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDFFZX5WTUEK02OMSXWU5MQXB0YNWNYDPACLA4YDO1ODWFLMLHG3BI">Clearance Constraint (Gap=10mil) (InComponentClass('SSI2130')),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDUD4S4QYQUS1JLMVBICW3FAEQZEAX0SOBTTPPUKDMRMJY0NXSVF0I">Clearance Constraint (Gap=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDHGDHL0PA4JZBEJZFBTSBLGTATHXOXWXG0NVC2XBGNC0P5J3RKZYD">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDOVV2PQT1UEVOIPPTKS4ZD4KU1GIVOUJ3KHJNA5KDPZSBF0D1DGFB">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID30UNOVMAW5BZIO5Q2MZU0I2E3DORS20XZFYTUPEOCCEIVER1HUSP">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDTS13FPOPJPP0EZRNYUGH04AYIDES4I4FFQWTGNPQI3KGAIGO5WTD">Width Constraint (Min=5mil) (Max=25mil) (Preferred=20mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID0J10VT4K4XILBB45FJS2L4ZABPSHUUPCN4LDF1BT4TGG3ABSXOZI">SMD Neck-Down Constraint (Percent=90%) (InComponentClass('SSI2130'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDJHRDMMXHV211HLEG3XCZO5MV2PKWMM1BCL4T2WHEFBDRNWA11DVO">SMD Entry (Side = Allowed) (Corner = Allowed) (Any Angle = Allowed) (Ignore First Corner = Allowed)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDGZBUVMLUAAGWDZO0V4ANDI551NAYBY24UXVT4VJF4SVSFOLJ0VPK">Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDKBC1YV0JGOT1P5JFOQ5LRCMVSORTTITEEJWAW5IAWDVU2AI3HVKO">Hole Size Constraint (Min=1mil) (Max=100mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID23Q41ZREZ0RBFUEIRZMZR4DZAIWBPMX0SMGXAHJ0B4I43AHQDYFB">Hole To Hole Clearance (Gap=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDWK1QAOMUYUH5GDWAEL1BOON03MQOXB03525IMZKA5SEQYNGQHYXO">Minimum Solder Mask Sliver (Gap=6mil) (All),(All)</a></td>
+<td class="column2">33</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDHWZVOW0FDBHWBFCMR0XRBE51ICZ0HWIFI4530NHDPNF2W2ZCJGSP">Silk To Solder Mask (Clearance=5mil) (IsPad),(All)</a></td>
+<td class="column2">25</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDVCR3F31VP1UFILMJZLMOPGINWN0IY1VHLICVBEOB4UILKTP4AS1I">Silk to Silk (Clearance=10mil) (All),(All)</a></td>
+<td class="column2">3</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID5PN1ZNI5S5AUH1HEPJJDDF5C4IBRNFIT0ZY1GXJGXKAYAO4F3DNO">Net Antennae (Tolerance=0mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDN0GP0ZIT3ZGMNQKHOR42TRG1PNIZHIWDWGQFWQCPZMXLVNFFPMHI">Room SSI2130 (Bounding Region = (1066.063mil, 2008.252mil, 3790.236mil, 4295.416mil) (InComponentClass('SSI2130'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID5IYHV31401H0IODR4WXE40AAWLFMZRDRMYT5ZVI2M0G2ZCYI3HUF">Room buffNlvlshifter (Bounding Region = (3169.291mil, 2077.899mil, 4814.822mil, 3269.796mil) (InComponentClass('buffNlvlshifter'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDXJLNOECUY0WULEUQSRIQR5AHYNAKRFN405UBMZD0BBP1A24335G">Room Midi_to_CV (Bounding Region = (1094.529mil, 3963.381mil, 3454.529mil, 6023.381mil) (InComponentClass('Midi_to_CV'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDJYUU5EIZUL5MI0QXGK1THJKBQPROS4LCPR03X5BCQGPN0RS1YYTO">Room flipflop (Bounding Region = (4526.348mil, 2887.591mil, 4860.718mil, 3269.796mil) (InComponentClass('flipflop'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDDFSUO5K4IOLVENGVRE4K4Y240BAKFFKY3KZCUPCZO1RB3SS2E1KE">Room buffNlvlshifter2 (Bounding Region = (3569.088mil, 3548.898mil, 4894.488mil, 4536.713mil) (InComponentClass('buffNlvlshifter2'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDG1DDVUXU3DCTI2QH5BEMMFTKXBLVPLA0BCEF4ED4FXQVE2SBJBOE">Room power (Bounding Region = (2779.37mil, 4860.63mil, 4934.212mil, 6148.976mil) (InComponentClass('power'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDWSX0TRCHGUFRCNC2WQYA0HX2QKV0HXECXOGEH0OBG2ZTTQGMXG5I">Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">61</td>
+</tr>
+</table><br><a name="IDWK1QAOMUYUH5GDWAEL1BOON03MQOXB03525IMZKA5SEQYNGQHYXO"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Minimum Solder Mask Sliver (Gap=6mil) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2838.637mil|Location2.X=2846.623mil|Location1.Y=2923.767mil|Location2.Y=2931.823mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2838.637mil|Location2.X=2846.623mil|Location1.Y=2923.767mil|Location2.Y=2931.823mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (4.795mil &lt; 6mil) Between Pad U1-1(1829.874mil,1144.374mil) on Top Layer And Pad U1-33(1846.299mil,1050mil) on Top Layer [Top Solder] Mask Sliver [4.795mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2771.824mil|Location2.X=2779.88mil|Location1.Y=2835.061mil|Location2.Y=2843.046mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2771.824mil|Location2.X=2779.88mil|Location1.Y=2835.061mil|Location2.Y=2843.046mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (4.795mil &lt; 6mil) Between Pad U1-10(1763.061mil,1022.439mil) on Top Layer And Pad U1-33(1846.299mil,1050mil) on Top Layer [Top Solder] Mask Sliver [4.795mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2782.96mil|Location2.X=2791.016mil|Location1.Y=2823.926mil|Location2.Y=2831.911mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2782.96mil|Location2.X=2791.016mil|Location1.Y=2823.926mil|Location2.Y=2831.911mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (4.795mil &lt; 6mil) Between Pad U1-11(1774.197mil,1011.304mil) on Top Layer And Pad U1-33(1846.299mil,1050mil) on Top Layer [Top Solder] Mask Sliver [4.795mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2794.095mil|Location2.X=2802.151mil|Location1.Y=2812.79mil|Location2.Y=2820.775mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2794.095mil|Location2.X=2802.151mil|Location1.Y=2812.79mil|Location2.Y=2820.775mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (4.795mil &lt; 6mil) Between Pad U1-12(1785.332mil,1000.168mil) on Top Layer And Pad U1-33(1846.299mil,1050mil) on Top Layer [Top Solder] Mask Sliver [4.795mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2805.231mil|Location2.X=2813.287mil|Location1.Y=2801.655mil|Location2.Y=2809.64mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2805.231mil|Location2.X=2813.287mil|Location1.Y=2801.655mil|Location2.Y=2809.64mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (4.795mil &lt; 6mil) Between Pad U1-13(1796.468mil,989.033mil) on Top Layer And Pad U1-33(1846.299mil,1050mil) on Top Layer [Top Solder] Mask Sliver [4.795mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2816.366mil|Location2.X=2824.422mil|Location1.Y=2790.519mil|Location2.Y=2798.504mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2816.366mil|Location2.X=2824.422mil|Location1.Y=2790.519mil|Location2.Y=2798.504mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (4.795mil &lt; 6mil) Between Pad U1-14(1807.603mil,977.897mil) on Top Layer And Pad U1-33(1846.299mil,1050mil) on Top Layer [Top Solder] Mask Sliver [4.795mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2827.502mil|Location2.X=2835.558mil|Location1.Y=2779.383mil|Location2.Y=2787.369mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2827.502mil|Location2.X=2835.558mil|Location1.Y=2779.383mil|Location2.Y=2787.369mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (4.795mil &lt; 6mil) Between Pad U1-15(1818.739mil,966.762mil) on Top Layer And Pad U1-33(1846.299mil,1050mil) on Top Layer [Top Solder] Mask Sliver [4.795mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2838.637mil|Location2.X=2846.693mil|Location1.Y=2768.248mil|Location2.Y=2776.233mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2838.637mil|Location2.X=2846.693mil|Location1.Y=2768.248mil|Location2.Y=2776.233mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (4.795mil &lt; 6mil) Between Pad U1-16(1829.874mil,955.626mil) on Top Layer And Pad U1-33(1846.299mil,1050mil) on Top Layer [Top Solder] Mask Sliver [4.795mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2846.711mil|Location2.X=2854.696mil|Location1.Y=2768.983mil|Location2.Y=2777.039mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2846.711mil|Location2.X=2854.696mil|Location1.Y=2768.983mil|Location2.Y=2777.039mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (4.795mil &lt; 6mil) Between Pad U1-17(1862.724mil,955.626mil) on Top Layer And Pad U1-33(1846.299mil,1050mil) on Top Layer [Top Solder] Mask Sliver [4.795mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2857.846mil|Location2.X=2865.831mil|Location1.Y=2780.119mil|Location2.Y=2788.174mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2857.846mil|Location2.X=2865.831mil|Location1.Y=2780.119mil|Location2.Y=2788.174mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (4.795mil &lt; 6mil) Between Pad U1-18(1873.86mil,966.762mil) on Top Layer And Pad U1-33(1846.299mil,1050mil) on Top Layer [Top Solder] Mask Sliver [4.795mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2868.982mil|Location2.X=2876.967mil|Location1.Y=2791.254mil|Location2.Y=2799.31mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2868.982mil|Location2.X=2876.967mil|Location1.Y=2791.254mil|Location2.Y=2799.31mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (4.795mil &lt; 6mil) Between Pad U1-19(1884.995mil,977.897mil) on Top Layer And Pad U1-33(1846.299mil,1050mil) on Top Layer [Top Solder] Mask Sliver [4.795mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2827.502mil|Location2.X=2835.487mil|Location1.Y=2912.631mil|Location2.Y=2920.687mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2827.502mil|Location2.X=2835.487mil|Location1.Y=2912.631mil|Location2.Y=2920.687mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (4.795mil &lt; 6mil) Between Pad U1-2(1818.739mil,1133.238mil) on Top Layer And Pad U1-33(1846.299mil,1050mil) on Top Layer [Top Solder] Mask Sliver [4.795mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2880.117mil|Location2.X=2888.103mil|Location1.Y=2802.39mil|Location2.Y=2810.445mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2880.117mil|Location2.X=2888.103mil|Location1.Y=2802.39mil|Location2.Y=2810.445mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (4.795mil &lt; 6mil) Between Pad U1-20(1896.131mil,989.033mil) on Top Layer And Pad U1-33(1846.299mil,1050mil) on Top Layer [Top Solder] Mask Sliver [4.795mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2891.253mil|Location2.X=2899.238mil|Location1.Y=2813.525mil|Location2.Y=2821.581mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2891.253mil|Location2.X=2899.238mil|Location1.Y=2813.525mil|Location2.Y=2821.581mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (4.795mil &lt; 6mil) Between Pad U1-21(1907.266mil,1000.168mil) on Top Layer And Pad U1-33(1846.299mil,1050mil) on Top Layer [Top Solder] Mask Sliver [4.795mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2902.389mil|Location2.X=2910.374mil|Location1.Y=2824.661mil|Location2.Y=2832.716mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2902.389mil|Location2.X=2910.374mil|Location1.Y=2824.661mil|Location2.Y=2832.716mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (4.795mil &lt; 6mil) Between Pad U1-22(1918.402mil,1011.304mil) on Top Layer And Pad U1-33(1846.299mil,1050mil) on Top Layer [Top Solder] Mask Sliver [4.795mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2913.524mil|Location2.X=2921.509mil|Location1.Y=2835.796mil|Location2.Y=2843.852mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2913.524mil|Location2.X=2921.509mil|Location1.Y=2835.796mil|Location2.Y=2843.852mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (4.795mil &lt; 6mil) Between Pad U1-23(1929.537mil,1022.439mil) on Top Layer And Pad U1-33(1846.299mil,1050mil) on Top Layer [Top Solder] Mask Sliver [4.795mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2920.066mil|Location2.X=2928.051mil|Location1.Y=2842.338mil|Location2.Y=2850.394mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2920.066mil|Location2.X=2928.051mil|Location1.Y=2842.338mil|Location2.Y=2850.394mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (4.795mil &lt; 6mil) Between Pad U1-24(1940.673mil,1033.575mil) on Top Layer And Pad U1-33(1846.299mil,1050mil) on Top Layer [Top Solder] Mask Sliver [4.795mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2920.066mil|Location2.X=2928.122mil|Location1.Y=2849.677mil|Location2.Y=2857.662mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2920.066mil|Location2.X=2928.122mil|Location1.Y=2849.677mil|Location2.Y=2857.662mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (4.795mil &lt; 6mil) Between Pad U1-25(1940.673mil,1066.425mil) on Top Layer And Pad U1-33(1846.299mil,1050mil) on Top Layer [Top Solder] Mask Sliver [4.795mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2913.524mil|Location2.X=2921.58mil|Location1.Y=2856.219mil|Location2.Y=2864.204mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2913.524mil|Location2.X=2921.58mil|Location1.Y=2856.219mil|Location2.Y=2864.204mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (4.795mil &lt; 6mil) Between Pad U1-26(1929.537mil,1077.561mil) on Top Layer And Pad U1-33(1846.299mil,1050mil) on Top Layer [Top Solder] Mask Sliver [4.795mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2902.389mil|Location2.X=2910.444mil|Location1.Y=2867.354mil|Location2.Y=2875.339mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2902.389mil|Location2.X=2910.444mil|Location1.Y=2867.354mil|Location2.Y=2875.339mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (4.795mil &lt; 6mil) Between Pad U1-27(1918.402mil,1088.696mil) on Top Layer And Pad U1-33(1846.299mil,1050mil) on Top Layer [Top Solder] Mask Sliver [4.795mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2891.253mil|Location2.X=2899.309mil|Location1.Y=2878.49mil|Location2.Y=2886.475mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2891.253mil|Location2.X=2899.309mil|Location1.Y=2878.49mil|Location2.Y=2886.475mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (4.795mil &lt; 6mil) Between Pad U1-28(1907.266mil,1099.832mil) on Top Layer And Pad U1-33(1846.299mil,1050mil) on Top Layer [Top Solder] Mask Sliver [4.795mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2880.117mil|Location2.X=2888.173mil|Location1.Y=2889.625mil|Location2.Y=2897.61mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2880.117mil|Location2.X=2888.173mil|Location1.Y=2889.625mil|Location2.Y=2897.61mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (4.795mil &lt; 6mil) Between Pad U1-29(1896.131mil,1110.967mil) on Top Layer And Pad U1-33(1846.299mil,1050mil) on Top Layer [Top Solder] Mask Sliver [4.795mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2816.366mil|Location2.X=2824.352mil|Location1.Y=2901.496mil|Location2.Y=2909.552mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2816.366mil|Location2.X=2824.352mil|Location1.Y=2901.496mil|Location2.Y=2909.552mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (4.795mil &lt; 6mil) Between Pad U1-3(1807.603mil,1122.103mil) on Top Layer And Pad U1-33(1846.299mil,1050mil) on Top Layer [Top Solder] Mask Sliver [4.795mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2868.982mil|Location2.X=2877.038mil|Location1.Y=2900.761mil|Location2.Y=2908.746mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2868.982mil|Location2.X=2877.038mil|Location1.Y=2900.761mil|Location2.Y=2908.746mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (4.795mil &lt; 6mil) Between Pad U1-30(1884.995mil,1122.103mil) on Top Layer And Pad U1-33(1846.299mil,1050mil) on Top Layer [Top Solder] Mask Sliver [4.795mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2857.846mil|Location2.X=2865.902mil|Location1.Y=2911.896mil|Location2.Y=2919.881mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2857.846mil|Location2.X=2865.902mil|Location1.Y=2911.896mil|Location2.Y=2919.881mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (4.795mil &lt; 6mil) Between Pad U1-31(1873.86mil,1133.238mil) on Top Layer And Pad U1-33(1846.299mil,1050mil) on Top Layer [Top Solder] Mask Sliver [4.795mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2846.711mil|Location2.X=2854.767mil|Location1.Y=2923.032mil|Location2.Y=2931.017mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2846.711mil|Location2.X=2854.767mil|Location1.Y=2923.032mil|Location2.Y=2931.017mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (4.795mil &lt; 6mil) Between Pad U1-32(1862.724mil,1144.374mil) on Top Layer And Pad U1-33(1846.299mil,1050mil) on Top Layer [Top Solder] Mask Sliver [4.795mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2865.257mil|Location2.X=2872.507mil|Location1.Y=2960.04mil|Location2.Y=2967.29mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2865.257mil|Location2.X=2872.507mil|Location1.Y=2960.04mil|Location2.Y=2967.29mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (5.149mil &lt; 6mil) Between Pad U1-32(1862.724mil,1144.374mil) on Top Layer And Via (1865mil,1195mil) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [5.149mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2805.231mil|Location2.X=2813.216mil|Location1.Y=2890.36mil|Location2.Y=2898.416mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2805.231mil|Location2.X=2813.216mil|Location1.Y=2890.36mil|Location2.Y=2898.416mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (4.795mil &lt; 6mil) Between Pad U1-33(1846.299mil,1050mil) on Top Layer And Pad U1-4(1796.468mil,1110.967mil) on Top Layer [Top Solder] Mask Sliver [4.795mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2794.095mil|Location2.X=2802.081mil|Location1.Y=2879.225mil|Location2.Y=2887.281mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2794.095mil|Location2.X=2802.081mil|Location1.Y=2879.225mil|Location2.Y=2887.281mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (4.795mil &lt; 6mil) Between Pad U1-33(1846.299mil,1050mil) on Top Layer And Pad U1-5(1785.332mil,1099.832mil) on Top Layer [Top Solder] Mask Sliver [4.795mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2782.96mil|Location2.X=2790.945mil|Location1.Y=2868.089mil|Location2.Y=2876.145mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2782.96mil|Location2.X=2790.945mil|Location1.Y=2868.089mil|Location2.Y=2876.145mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (4.795mil &lt; 6mil) Between Pad U1-33(1846.299mil,1050mil) on Top Layer And Pad U1-6(1774.197mil,1088.696mil) on Top Layer [Top Solder] Mask Sliver [4.795mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2771.824mil|Location2.X=2779.809mil|Location1.Y=2856.954mil|Location2.Y=2865.01mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2771.824mil|Location2.X=2779.809mil|Location1.Y=2856.954mil|Location2.Y=2865.01mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (4.795mil &lt; 6mil) Between Pad U1-33(1846.299mil,1050mil) on Top Layer And Pad U1-7(1763.061mil,1077.561mil) on Top Layer [Top Solder] Mask Sliver [4.795mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2765.282mil|Location2.X=2773.267mil|Location1.Y=2850.412mil|Location2.Y=2858.468mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2765.282mil|Location2.X=2773.267mil|Location1.Y=2850.412mil|Location2.Y=2858.468mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (4.795mil &lt; 6mil) Between Pad U1-33(1846.299mil,1050mil) on Top Layer And Pad U1-8(1751.926mil,1066.425mil) on Top Layer [Top Solder] Mask Sliver [4.795mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2765.282mil|Location2.X=2773.338mil|Location1.Y=2841.603mil|Location2.Y=2849.588mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2765.282mil|Location2.X=2773.338mil|Location1.Y=2841.603mil|Location2.Y=2849.588mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (4.795mil &lt; 6mil) Between Pad U1-33(1846.299mil,1050mil) on Top Layer And Pad U1-9(1751.926mil,1033.575mil) on Top Layer [Top Solder] Mask Sliver [4.795mil]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDHWZVOW0FDBHWBFCMR0XRBE51ICZ0HWIFI4530NHDPNF2W2ZCJGSP"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk To Solder Mask (Clearance=5mil) (IsPad),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1751.186mil|Location2.X=1757.436mil|Location1.Y=4090.186mil|Location2.Y=4096.436mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1751.186mil|Location2.X=1757.436mil|Location1.Y=4090.186mil|Location2.Y=4096.436mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (1.512mil &lt; 5mil) Between Pad C3-1(730mil,2270mil) on Multi-Layer And Region (97 hole(s)) Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [1.512mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1567.606mil|Location2.X=1573.856mil|Location1.Y=4992.401mil|Location2.Y=4998.651mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1567.606mil|Location2.X=1573.856mil|Location1.Y=4992.401mil|Location2.Y=4998.651mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (2.997mil &lt; 5mil) Between Pad D2-1(572.127mil,3166.531mil) on Multi-Layer And Region (97 hole(s)) Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [2.997mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2976.241mil|Location2.X=2980.574mil|Location1.Y=5889.235mil|Location2.Y=5893.569mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2976.241mil|Location2.X=2980.574mil|Location1.Y=5889.235mil|Location2.Y=5893.569mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 5mil) Between Pad J1-1(2000mil,4100mil) on Multi-Layer And Region (97 hole(s)) Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3398.375mil|Location2.X=3405.797mil|Location1.Y=5963.127mil|Location2.Y=5970.752mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3398.375mil|Location2.X=3405.797mil|Location1.Y=5963.127mil|Location2.Y=5970.752mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (3.908mil &lt; 5mil) Between Pad J1-10(2400mil,4200mil) on Multi-Layer And Region (97 hole(s)) Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [3.908mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2984.613mil|Location2.X=2990.863mil|Location1.Y=5964.183mil|Location2.Y=5970.433mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2984.613mil|Location2.X=2990.863mil|Location1.Y=5964.183mil|Location2.Y=5970.433mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.847mil &lt; 5mil) Between Pad J1-2(2000mil,4200mil) on Multi-Layer And Region (97 hole(s)) Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [4.847mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3076.251mil|Location2.X=3080.584mil|Location1.Y=5885.767mil|Location2.Y=5890.1mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3076.251mil|Location2.X=3080.584mil|Location1.Y=5885.767mil|Location2.Y=5890.1mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 5mil) Between Pad J1-3(2100mil,4100mil) on Multi-Layer And Region (97 hole(s)) Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3088.487mil|Location2.X=3094.737mil|Location1.Y=5963.6mil|Location2.Y=5969.85mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3088.487mil|Location2.X=3094.737mil|Location1.Y=5963.6mil|Location2.Y=5969.85mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (3.66mil &lt; 5mil) Between Pad J1-4(2100mil,4200mil) on Multi-Layer And Region (97 hole(s)) Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [3.66mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3176.26mil|Location2.X=3180.594mil|Location1.Y=5882.298mil|Location2.Y=5886.632mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3176.26mil|Location2.X=3180.594mil|Location1.Y=5882.298mil|Location2.Y=5886.632mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 5mil) Between Pad J1-5(2200mil,4100mil) on Multi-Layer And Region (97 hole(s)) Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3184.613mil|Location2.X=3190.863mil|Location1.Y=5964.183mil|Location2.Y=5970.433mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3184.613mil|Location2.X=3190.863mil|Location1.Y=5964.183mil|Location2.Y=5970.433mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.847mil &lt; 5mil) Between Pad J1-6(2200mil,4200mil) on Multi-Layer And Region (97 hole(s)) Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [4.847mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3276.27mil|Location2.X=3280.604mil|Location1.Y=5878.83mil|Location2.Y=5883.163mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3276.27mil|Location2.X=3280.604mil|Location1.Y=5878.83mil|Location2.Y=5883.163mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 5mil) Between Pad J1-7(2300mil,4100mil) on Multi-Layer And Region (97 hole(s)) Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3302.333mil|Location2.X=3309.779mil|Location1.Y=5963.246mil|Location2.Y=5970.846mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3302.333mil|Location2.X=3309.779mil|Location1.Y=5963.246mil|Location2.Y=5970.846mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.126mil &lt; 5mil) Between Pad J1-8(2300mil,4200mil) on Multi-Layer And Region (97 hole(s)) Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [4.126mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3376.28mil|Location2.X=3380.613mil|Location1.Y=5875.361mil|Location2.Y=5879.694mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3376.28mil|Location2.X=3380.613mil|Location1.Y=5875.361mil|Location2.Y=5879.694mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 5mil) Between Pad J1-9(2400mil,4100mil) on Multi-Layer And Region (97 hole(s)) Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2958.848mil|Location2.X=2965.098mil|Location1.Y=3818.102mil|Location2.Y=3824.352mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2958.848mil|Location2.X=2965.098mil|Location1.Y=3818.102mil|Location2.Y=3824.352mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (1.44mil &lt; 5mil) Between Pad R24-1(1986.299mil,2045mil) on Multi-Layer And Region (1 hole(s)) Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [1.44mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3064.322mil|Location2.X=3070.572mil|Location1.Y=3826.555mil|Location2.Y=3832.805mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3064.322mil|Location2.X=3070.572mil|Location1.Y=3826.555mil|Location2.Y=3832.805mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (1.572mil &lt; 5mil) Between Pad R24-2(2086.299mil,2045mil) on Multi-Layer And Region (1 hole(s)) Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [1.572mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3164.683mil|Location2.X=3169.016mil|Location1.Y=3829.408mil|Location2.Y=3833.742mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3164.683mil|Location2.X=3169.016mil|Location1.Y=3829.408mil|Location2.Y=3833.742mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 5mil) Between Pad R24-3(2186.299mil,2045mil) on Multi-Layer And Region (1 hole(s)) Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1586.557mil|Location2.X=1590.89mil|Location1.Y=5277.263mil|Location2.Y=5281.596mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1586.557mil|Location2.X=1590.89mil|Location1.Y=5277.263mil|Location2.Y=5281.596mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 5mil) Between Pad U14-1(574.529mil,3503.381mil) on Multi-Layer And Region (97 hole(s)) Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1581.428mil|Location2.X=1587.678mil|Location1.Y=5178.061mil|Location2.Y=5184.311mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1581.428mil|Location2.X=1587.678mil|Location1.Y=5178.061mil|Location2.Y=5184.311mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.908mil &lt; 5mil) Between Pad U14-2(574.529mil,3403.381mil) on Multi-Layer And Region (97 hole(s)) Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [4.908mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2762.835mil|Location2.X=2767.169mil|Location1.Y=4731.687mil|Location2.Y=4736.02mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2762.835mil|Location2.X=2767.169mil|Location1.Y=4731.687mil|Location2.Y=4736.02mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 5mil) Between Pad U7-1(1794.529mil,2963.381mil) on Multi-Layer And Region (1 hole(s)) Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2774.633mil|Location2.X=2778.966mil|Location1.Y=4661.215mil|Location2.Y=4665.548mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2774.633mil|Location2.X=2778.966mil|Location1.Y=4661.215mil|Location2.Y=4665.548mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 5mil) Between Pad U7-2(1794.529mil,2863.381mil) on Multi-Layer And Region (1 hole(s)) Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2772.299mil|Location2.X=2778.549mil|Location1.Y=4536.784mil|Location2.Y=4543.034mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2772.299mil|Location2.X=2778.549mil|Location1.Y=4536.784mil|Location2.Y=4543.034mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (1.827mil &lt; 5mil) Between Pad U7-3(1794.529mil,2763.381mil) on Multi-Layer And Region (1 hole(s)) Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [1.827mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2774.144mil|Location2.X=2778.477mil|Location1.Y=4437.96mil|Location2.Y=4442.294mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2774.144mil|Location2.X=2778.477mil|Location1.Y=4437.96mil|Location2.Y=4442.294mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 5mil) Between Pad U7-4(1794.529mil,2663.381mil) on Multi-Layer And Region (1 hole(s)) Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2774.144mil|Location2.X=2778.477mil|Location1.Y=4337.96mil|Location2.Y=4342.294mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2774.144mil|Location2.X=2778.477mil|Location1.Y=4337.96mil|Location2.Y=4342.294mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 5mil) Between Pad U7-5(1794.529mil,2563.381mil) on Multi-Layer And Region (1 hole(s)) Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2771.749mil|Location2.X=2777.999mil|Location1.Y=4236.509mil|Location2.Y=4242.759mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2771.749mil|Location2.X=2777.999mil|Location1.Y=4236.509mil|Location2.Y=4242.759mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (3.038mil &lt; 5mil) Between Pad U7-6(1794.529mil,2463.381mil) on Multi-Layer And Region (1 hole(s)) Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [3.038mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2774.439mil|Location2.X=2778.772mil|Location1.Y=4152.004mil|Location2.Y=4156.338mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2774.439mil|Location2.X=2778.772mil|Location1.Y=4152.004mil|Location2.Y=4156.338mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 5mil) Between Pad U7-7(1794.529mil,2363.381mil) on Multi-Layer And Region (1 hole(s)) Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2534.16mil|Location2.X=2538.494mil|Location1.Y=5412.655mil|Location2.Y=5416.988mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2534.16mil|Location2.X=2538.494mil|Location1.Y=5412.655mil|Location2.Y=5416.988mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 5mil) Between Pad U9-28(1514.529mil,3603.381mil) on Multi-Layer And Region (0 hole(s)) Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDVCR3F31VP1UFILMJZLMOPGINWN0IY1VHLICVBEOB4UILKTP4AS1I"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk to Silk (Clearance=10mil) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3569.375mil|Location2.X=3580.625mil|Location1.Y=3352.44mil|Location2.Y=3363.69mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3569.375mil|Location2.X=3580.625mil|Location1.Y=3352.44mil|Location2.Y=3363.69mil|Absolute=True">Silk To Silk Clearance Constraint: (5.995mil &lt; 10mil) Between Text "R42" (2428.492mil,1490.087mil) on Top Overlay And Track (2575mil,1565mil)(2575mil,2015mil) on Top Overlay Silk Text to Silk Clearance [5.995mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3572.818mil|Location2.X=3584.068mil|Location1.Y=3352.44mil|Location2.Y=3363.69mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3572.818mil|Location2.X=3584.068mil|Location1.Y=3352.44mil|Location2.Y=3363.69mil|Absolute=True">Silk To Silk Clearance Constraint: (5.995mil &lt; 10mil) Between Text "R42" (2428.492mil,1490.087mil) on Top Overlay And Track (2575mil,1565mil)(2675mil,1565mil) on Top Overlay Silk Text to Silk Clearance [5.995mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3612.392mil|Location2.X=3623.642mil|Location1.Y=3352.19mil|Location2.Y=3363.44mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\anony\Documents\GitHub\SSI2130-Oscillator\Altium\AES_SSI2130\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3612.392mil|Location2.X=3623.642mil|Location1.Y=3352.19mil|Location2.Y=3363.44mil|Absolute=True">Silk To Silk Clearance Constraint: (6.495mil &lt; 10mil) Between Text "R43" (2618.017mil,1489.587mil) on Top Overlay And Track (2575mil,1565mil)(2675mil,1565mil) on Top Overlay Silk Text to Silk Clearance [6.495mil]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>
