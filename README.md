@@ -7,6 +7,7 @@ Ryan Laur, Daniel Louis, Sahil Patel, Dieter Steinhauser, Cale Woodward, Eric Ba
 
 ## Topics Explored
 * Decoupling Capacitors
+* Through-Zero FM
 
 ## Parts
 
