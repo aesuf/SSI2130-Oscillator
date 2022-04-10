@@ -1,0 +1,11 @@
+Removed Pin From Net: NetName=CV_PWM Pin=P2-6
+Change Component Comment : Designator=J3 Old Comment=HSYNC New Comment=HARD SYNC
+Added Component: Designator=J22(PJ301M-12)
+Add component (AddParameter): Name = "Supplier"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "PJ301M-12"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=J22-1
+Added Pin To Net: NetName=CV_PWM Pin=P2-7
+Added Pin To Net: NetName=MIX Pin=J22-3
+Added Pin To Net: NetName=MIX Pin=P2-6
+Added Net: Name=MIX
+Added Member To Class: ClassName=main Member=Component J22 MIX OUT

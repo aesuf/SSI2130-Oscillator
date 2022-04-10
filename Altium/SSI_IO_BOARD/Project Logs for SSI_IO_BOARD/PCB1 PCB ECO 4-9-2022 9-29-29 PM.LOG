@@ -1,0 +1,30 @@
+Change Component Comment : Designator=J5 Old Comment=PJ301M-12 New Comment=1V/OCT
+Change Component Comment : Designator=J7 Old Comment=PJ301M-12 New Comment=AUX1
+Change Component Comment : Designator=J9 Old Comment=PJ301M-12 New Comment=AUX2
+Change Component Comment : Designator=J8 Old Comment=PJ301M-12 New Comment=BEND
+Change Component Comment : Designator=J2 Old Comment=PJ301M-12 New Comment=CLK
+Change Component Comment : Designator=J10 Old Comment=PJ301M-12 New Comment=CTRL
+Change Component Comment : Designator=J6 Old Comment=PJ301M-12 New Comment=GATE
+Change Component Comment : Designator=J3 Old Comment=PJ301M-12 New Comment=HARD SYNC
+Change Component Comment : Designator=J15 Old Comment=PJ301M-12 New Comment=LIN FREQ
+Change Component Comment : Designator=J12 Old Comment=PJ301M-12 New Comment=NOTE
+Change Component Comment : Designator=J11 Old Comment=PJ301M-12 New Comment=OCT -1
+Change Component Comment : Designator=J13 Old Comment=PJ301M-12 New Comment=OCT -2
+Change Component Comment : Designator=J19 Old Comment=PJ301M-12 New Comment=PULSE
+Change Component Comment : Designator=J20 Old Comment=PJ301M-12 New Comment=SAW
+Change Component Comment : Designator=J21 Old Comment=PJ301M-12 New Comment=SIN
+Change Component Comment : Designator=J1 Old Comment=PJ301M-12 New Comment=SOFT_SYNC
+Change Component Comment : Designator=J18 Old Comment=PJ301M-12 New Comment=SQR
+Change Component Comment : Designator=J17 Old Comment=PJ301M-12 New Comment=TRI
+Change Component Comment : Designator=J4 Old Comment=PJ301M-12 New Comment=TRIG
+Change Component Comment : Designator=J14 Old Comment=PJ301M-12 New Comment=VEL
+Change Component Comment : Designator=R1 Old Comment=RPot New Comment=AUX1 MIX
+Change Component Comment : Designator=R2 Old Comment=RPot New Comment=AUX2 MIX
+Change Component Comment : Designator=R6 Old Comment=RPot New Comment=COARSE
+Change Component Comment : Designator=R7 Old Comment=RPot New Comment=FINE
+Change Component Comment : Designator=R10 Old Comment=RPot New Comment=LIN DEPTH
+Change Component Comment : Designator=R3 Old Comment=RPot New Comment=PULSE MIX
+Change Component Comment : Designator=R9 Old Comment=RPot New Comment=PW
+Change Component Comment : Designator=R4 Old Comment=RPot New Comment=SAW MIX
+Change Component Comment : Designator=R5 Old Comment=RPot New Comment=TRI MIX
+Change Component Comment : Designator=J16 Old Comment=SD-50BV New Comment=MIDI

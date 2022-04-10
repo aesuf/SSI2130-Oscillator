@@ -1,0 +1,10 @@
+Board Information Report
+Filename     : C:\Users\Public\Documents\Altium\Projects\SSI_IO_BOARD\PCB1.PcbDoc
+Date         : 4/9/2022
+Time         : 10:10:04 PM
+Time Elapsed : 00:00:00
+
+General
+    Board Size, 4250milsx4500mils
+    Components on board, 38
+count : 2
