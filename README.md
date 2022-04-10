@@ -3,7 +3,7 @@
 This repository contains documentation for an Oscillator designed using the SSI2130 chip. The intended application is for use as an audio synthesizer. The MIDI Converter used the design "MIDI2CV" by Larry McGovern (available for free under the GNU General Public License via <https://github.com/elkayem/midi2cv>).
 
 ## Design Team
-Ryan Laur, Daniel Louis, Sahil Patel, Dieter Steinhauser, Cale Woodward, et al.
+Ryan Laur, Daniel Louis, Sahil Patel, Dieter Steinhauser, Cale Woodward, Eric Barkuloo, Hannah Kirkland, Jackson Cornell et al.
 
 ## Topics Explored
 * Decoupling Capacitors
